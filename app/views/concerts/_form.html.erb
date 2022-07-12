@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :assistants, style: "display: block" %>
     <%= form.number_field :assistants %>
   </div>
 
-  <div>
-    <%= form.label :group_id, style: "display: block" %>
-    <%= form.text_field :group_id %>
+  <div class="field">
+	    <%= form.label :group_id %>
+	    <%= form.select :group_id, Group.all.map{|group| [group.name, group.id]} %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
